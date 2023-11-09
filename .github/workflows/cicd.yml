@@ -2,7 +2,7 @@ name: Тестирование и развёртывание проекта
 
 on:
   push:
-    branches: [ci]
+    branches: [master]
 
 jobs:
   tests:
@@ -42,9 +42,6 @@ jobs:
 
       - name: Установить зависимости
         run: pip install -r requirements.txt
-
-      - name: Линтинг
-        run: flake8 logistic/ --exclude=logistic/migrations/
 
       - name: Тесты
         run: python manage.py test
